@@ -1,0 +1,225 @@
+.social-icon {
+  width: 24px;
+  height: 24px;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.footer-links a:active .social-icon,
+.footer-links a:focus .social-icon,
+.footer-links a:hover .social-icon {
+  transform: scale(0.8);
+  transition: transform 0.1s ease;
+}
+
+.copyright {
+  font-size: 0.75em;
+  color: #666; /* Opcional, por coherencia */
+}
+
+/* Base styles */
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #000000;
+  background-color: #fff;
+  scroll-behavior: smooth;
+  align-items: center; /* Center content vertically */
+}
+
+/* Ensure body fills available space for flex layout */
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Prevent content under fixed header */
+main {
+  flex: 1;
+  padding: 1em;
+  margin-top: 100px; /* Adjust based on your header height */
+}
+
+
+/* Móvil: pantallas hasta 600px de ancho */
+@media (max-width: 600px) {
+  main {
+    margin: 1em;       /* Menos margen para aprovechar el espacio */
+    padding: 0 0.5em;  /* Menos padding horizontal */
+  }
+
+  .footer-content {
+    max-width: 100%;   /* Que el footer ocupe todo el ancho */
+    flex-direction: column; /* Apilar texto y redes verticalmente */
+    gap: 0.5em;        /* Espacio entre líneas */
+    align-items: center; /* Centrar contenido */
+    text-align: center;
+  }
+
+  .footer-content p {
+    font-size: 0.8em;  /* Texto copyright un poco más pequeño */
+    margin: 0;         /* Ajustar margen para apilar limpio */
+  }
+
+  .footer-links {
+    /* justify-content: center; /* Centrar iconos */
+    gap: 0.8em;              /* Separación un poco menor */
+  }
+
+  .social-icon {
+    width: 20px;    /* Iconos un poco más pequeños en móvil */
+    height: auto;
+  }
+}
+/* Header styles */
+.site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 10000;
+  background: #fff;
+  height: 110px; /* o la altura que tenga tu header */
+  padding: 0.5em 1em;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header-inner {
+  max-width: 960px;
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo img {
+  font-weight: bold;
+  font-size: 1.2em;
+  text-decoration: none;
+  color: #000;
+}
+
+.main-nav ul {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 1.5em; /* Espacio entre links */
+}
+
+.main-nav ul li a {
+  text-decoration: none;
+  color: #333; /* Cambia color si quieres */
+  font-weight: 500;
+  white-space: nowrap; /* Evita salto de línea en links */
+}
+
+/* Menu toggle (hidden checkbox) */
+.menu-toggle {
+  display: none;
+}
+
+.hamburger {
+  display: none;
+  font-size: 1.5em;
+  cursor: pointer;
+}
+
+/* Nav links */
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 1em;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #333;
+}
+
+/* Mobile styles */
+@media (max-width: 600px) {
+  .hamburger {
+    display: block;
+  }
+
+  .nav {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background: #fff;
+    width: 100%;
+    display: none;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+
+  .nav-links {
+    flex-direction: column;
+    padding: 1em;
+  }
+
+  .menu-toggle:checked + .hamburger + .nav {
+    display: block;
+  }
+}
+
+/* Footer styles */
+     html, body {
+      height: 100%;
+    }
+
+    body {
+      display: flex;
+      flex-direction: column;
+    }
+
+    main {
+      flex: 1;
+    }
+
+
+.footer {
+    position: fixed;
+  bottom: 0;
+  background: #ffffff; /* or your background color */
+  width: 100%;
+  left: 0;
+  rigth: 0;
+  padding: 0.5em 1em;
+  font-size: 0.9em;
+  z-index: 1000;
+  }
+  .footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 960px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.footer-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  gap: 1em;
+}
+
+ .footer-links a {
+  display: inline-block;
+  color: #666;
+  text-decoration: none;
+}
+  .footer-links a:hover {
+    color: #000;
+  }
