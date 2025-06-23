@@ -115,7 +115,7 @@ main {
 }
 
 .footer-content {
-  max-width: 860px;
+  max-width: 660px;
   padding: 0 1em;
   margin: 0 auto;
   display: flex;
@@ -129,7 +129,11 @@ main {
   margin: 0;
   display: flex;
   gap: 0.8em;
-  padding-right: 1em;
+}
+.footer-links li {
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
 .footer-links a {
@@ -149,12 +153,6 @@ main {
   vertical-align: middle;
 }
 
-.footer-links a:active .social-icon,
-.footer-links a:focus .social-icon,
-.footer-links a:hover .social-icon {
-  transform: scale(0.8);
-  transition: transform 0.1s ease;
-}
 
 /* 4. Responsive styles */
 @media (max-width: 600px) {
