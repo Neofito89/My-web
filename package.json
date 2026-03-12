@@ -20,9 +20,8 @@
   "homepage": "https://github.com/Neofito89/My-web#readme",
   "description": "",
   "devDependencies": {
-    "@11ty/eleventy": "^3.1.0"
-  },
-  "dependencies": {
-    "@11ty/eleventy-img": "^6.0.4"
+    "@11ty/eleventy": "^3.1.0",
+    "@11ty/eleventy-img": "^6.0.4",
+    "sharp": "^0.34.3"
   }
 }
