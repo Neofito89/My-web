@@ -3,8 +3,10 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon --watch src -e md,njk,html,css --exec \"npx @11ty/eleventy --serve\"",
+    "start": "set ELEVENTY_USE_POLLING=true && npx @11ty/eleventy --serve --watch",
     "build": "npx @11ty/eleventy",
+    "clean": "rmdir /s /q dist",
+    "rebuild": "npm run clean && npm run build",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
