@@ -3,6 +3,15 @@ const path = require('path');
 const Image = require("@11ty/eleventy-img");
 
 module.exports = function(eleventyConfig) {
+  eleventyConfig.setServerPassthroughCopyBehavior("passthrough");
+  eleventyConfig.setChokidarConfig({
+  usePolling: true,
+  interval: 500
+});
+  eleventyConfig.addWatchTarget("./src/**/*.md");
+  eleventyConfig.setWatchThrottleWaitTime(100);
+  eleventyConfig.setUseGitIgnore(false);
+  eleventyConfig.addWatchTarget("./src/");
   eleventyConfig.addPassthroughCopy("src/css");
   eleventyConfig.addPassthroughCopy({ "src/css/fonts": "fonts" });
   eleventyConfig.addPassthroughCopy("src/images");
