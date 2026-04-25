@@ -216,6 +216,39 @@ main {
   }
 }
 
+a {
+  color: inherit; /* hereda el color del texto */
+  text-decoration: none;
+}
+
+a:hover,
+a:focus {
+  text-decoration: underline;
+}
+
+.legal {
+  max-width: 680px;        /* ancho medio */
+  margin: 0 auto;          /* centrado horizontal */
+  padding: 2rem 1.5rem;    /* aire lateral */
+  text-align: justify;     /* texto justificado */
+  line-height: 1.6;
+}
+
+.legal h1,
+.legal h2,
+.legal h3 {
+  text-align: left;        /* títulos NO justificados */
+  margin-top: 2rem;
+}
+
+.legal p {
+  margin-bottom: 1rem;
+}
+
+/* opcional: evitar huecos raros en alemán */
+.legal {
+  hyphens: auto;
+}
 @font-face {
   font-family: "Poiret One";
   src: url("/css/fonts/PoiretOne/PoiretOne-Regular.woff2") format("woff2"),
