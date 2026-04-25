@@ -14,10 +14,12 @@
 <script>
   var _paq = window._paq = window._paq || [];
   /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
-  _paq.push(['disableCookies']);
-  
+  _paq.push(["disableCampaignParameters"]);
+  _paq.push(["setDoNotTrack", true]);
+  _paq.push(["disableCookies"]);
   _paq.push(['trackPageView']);
   _paq.push(['enableLinkTracking']);
+  _paq.push(['disableBrowserFeatureDetection']);
   (function() {
     var u="//analytics.sergioalegre.com/";
     _paq.push(['setTrackerUrl', u+'matomo.php']);
@@ -26,6 +28,7 @@
     g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
   })();
 </script>
+
 <!-- End Matomo Code -->
 
   </head>

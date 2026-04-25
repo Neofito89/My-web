@@ -13,7 +13,7 @@ templateEngine: njk
 <br>
 <h2>Datenschutzerklärung / Privacy Policy</h2>
 
-<h2>Deutsch</h2>
+<h2>Deutsch / english version below</h2>
 
 <h3>1. Allgemeine Hinweise</h3>
 <p>

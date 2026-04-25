@@ -63,7 +63,22 @@ main {
   align-items: center;
   justify-content: space-between;
 }
+.main-nav ul li:last-child {
+  position: relative;
+  padding-left: 1.4rem;
+}
 
+.main-nav ul li:last-child::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 1px;
+  height: 3em;
+  background: #222;
+  opacity: 0.5;
+  transform: translateY(-50%);
+}
 .logo img {
   font-weight: bold;
   font-size: 1.2em;
@@ -216,6 +231,7 @@ main {
   }
 }
 
+
 a {
   color: inherit; /* hereda el color del texto */
   text-decoration: none;
@@ -227,7 +243,7 @@ a:focus {
 }
 
 .legal {
-  max-width: 680px;        /* ancho medio */
+  max-width: 580px;        /* ancho medio */
   margin: 0 auto;          /* centrado horizontal */
   padding: 2rem 1.5rem;    /* aire lateral */
   text-align: justify;     /* texto justificado */
@@ -258,6 +274,21 @@ a:focus {
   font-display: swap;
 }
 
+.contact-note {
+  max-width: 520px;
+}
+.contact-note a {
+  text-decoration: none;
+  border-bottom: 1px solid rgba(0,0,0,0.3);
+  padding-bottom: 1px;
+  transition: border-color 0.2s ease;
+  display: inline-block; /* necesario para transform */
+}
+
+.contact-note a:hover {
+  border-bottom: 1px solid rgba(0,0,0,0.8);
+  transform: scale(1.03) ;
+}
 :root {
   --font-sans: "Poiret One", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
 }
