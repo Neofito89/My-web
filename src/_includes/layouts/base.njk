@@ -9,7 +9,7 @@
     <link rel="shortcut icon" href="/images/favicon.ico" />
     <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png" />
     <link rel="manifest" href="/images/site.webmanifest" />
-    <link rel="preload" href="/fonts/PoiretOne-Regular.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="/fonts/PoiretOne/PoiretOne-Regular.woff2" as="font" type="font/woff2" crossorigin>
   <!-- Matomo -->
 <script>
   var _paq = window._paq = window._paq || [];
@@ -38,7 +38,9 @@
     {% include "header.njk" %}
    
     <main>
-      {{ content | safe }}
+      <div class="content">
+    {{ content | safe }}
+  </div>
     </main>
 
     {% include "footer.njk" %}

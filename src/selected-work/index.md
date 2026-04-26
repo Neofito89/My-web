@@ -1,6 +1,6 @@
 ---
 layout: base.njk
-permalink: /personal-projects/
+permalink: /selected-work/
 ---
 
 # About me

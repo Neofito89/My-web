@@ -1,0 +1,337 @@
+/* 1. Reset / Base styles */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #000;
+  background-color: #fff;
+  scroll-behavior: smooth;
+  align-items: center;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;
+  padding: 1em;
+  margin-top: 100px;
+}
+
+/* 2. Typography */
+.copyright {
+  font-size: 0.75em;
+  color: #666;
+}
+
+/* 3. Layout & Components */
+.site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 10000;
+  background: #fff;
+  height: 110px;
+  padding: 0.5em 1em;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.site-header .main-nav a {
+  font-family: "Poiret One", sans-serif;
+  font-weight: 400;
+  font-size: 1.5rem;  
+  line-height: 1.2;
+}
+
+.header-inner {
+  max-width: 960px;
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.main-nav ul li:last-child {
+  position: relative;
+  padding-left: 1.4rem;
+}
+
+.main-nav ul li:last-child::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 1px;
+  height: 3em;
+  background: #222;
+  opacity: 0.5;
+  transform: translateY(-50%);
+}
+.logo img {
+  font-weight: bold;
+  font-size: 1.2em;
+  text-decoration: none;
+  color: #000;
+}
+
+.main-nav ul {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 1.5em;
+}
+
+.main-nav ul li a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.menu-toggle {
+  display: none;
+}
+
+.hamburger {
+  display: none;
+  font-size: 1.5em;
+  cursor: pointer;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 1em;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #333;
+}
+
+.footer {
+  position: fixed;
+  bottom: 0;
+  background: #fff;
+  width: 100%;
+  left: 0;
+  right: 0;
+  padding: 0.5em 1em;
+  font-size: 0.9em;
+  z-index: 1000;
+}
+
+.footer-content {
+  max-width: 660px;
+  padding: 0 1em;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.footer-links {
+  list-style: none;
+  padding: 0 1em;
+  margin: 0;
+  display: flex;
+  gap: 0.8em;
+}
+.footer-links li {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.footer-links a {
+  display: inline-block;
+  color: #666;
+  text-decoration: none;
+}
+
+.footer-links a:hover {
+  color: #000;
+}
+
+.social-icon {
+  width: 20px;
+  height: 20px;
+  display: inline-block;
+  vertical-align: middle;
+
+}
+
+
+/* 4. Responsive styles */
+@media (max-width: 600px) {
+  main {
+    margin: 1em;
+    padding: 0 0.5em;
+  }
+
+  .hamburger {
+    display: block;
+  }
+
+  .nav {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background: #fff;
+    width: 100%;
+    display: none;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+
+  .nav-links {
+    flex-direction: column;
+    padding: 1em;
+  }
+
+  .menu-toggle:checked + .hamburger + .nav {
+    display: block;
+  }
+
+  .footer-content {
+    max-width: 100%;
+    flex-direction: column-reverse;
+    gap: 0.5em;
+    align-items: center;
+    text-align: center;
+    padding: 0 1em;
+  }
+
+  .footer-content p {
+    font-size: 0.8em;
+    margin: 0;
+  }
+
+  .footer-links {
+    gap: 0.8em;
+  }
+
+  .social-icon {
+    width: 16px;
+    height: auto;
+  }
+}
+
+
+a {
+  color: inherit; /* hereda el color del texto */
+  text-decoration: none;
+}
+
+a:hover,
+a:focus {
+  text-decoration: underline;
+}
+
+.legal {
+  max-width: 580px;        /* ancho medio */
+  margin: 0 auto;          /* centrado horizontal */
+  padding: 2rem 1.5rem;    /* aire lateral */
+  text-align: justify;     /* texto justificado */
+  line-height: 1.6;
+}
+
+.legal h1,
+.legal h2,
+.legal h3 {
+  text-align: left;        /* títulos NO justificados */
+  margin-top: 2rem;
+}
+
+.legal p {
+  margin-bottom: 1rem;
+}
+
+/* opcional: evitar huecos raros en alemán */
+.legal {
+  hyphens: auto;
+}
+@font-face {
+  font-family: "Poiret One";
+  src: url("/css/fonts/PoiretOne/PoiretOne-Regular.woff2") format("woff2"),
+       url("/css/fonts/PoiretOne/PoiretOne-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+.contact-note {
+  max-width: 520px;
+}
+.contact-note a {
+  text-decoration: none;
+  border-bottom: 1px solid rgba(0,0,0,0.3);
+  padding-bottom: 1px;
+  transition: border-color 0.2s ease;
+  display: inline-block; /* necesario para transform */
+}
+
+.contact-note a:hover {
+  border-bottom: 1px solid rgba(0,0,0,0.8);
+  transform: scale(1.03) ;
+}
+:root {
+  --font-sans: "Poiret One", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+}
+
+body {
+  font-family: var(--font-sans);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Poiret One", sans-serif;
+  font-weight: 400;      /* only weight available */
+  line-height: 1.2;
+  margin: 1em 0 0.5em;
+}
+
+h1 {
+  font-size: 2.5rem;   /* ~40px */
+  letter-spacing: 0.02em;
+}
+
+h2 {
+  font-size: 2rem;     /* ~32px */
+  letter-spacing: 0.015em;
+}
+
+h3 {
+  font-size: 1.5rem;   /* ~24px */
+  letter-spacing: 0.01em;
+}
+
+h4 {
+  font-size: 1.25rem;  /* ~20px */
+  letter-spacing: 0.01em;
+}
+
+h5 {
+  font-size: 1rem;     /* ~16px */
+  letter-spacing: 0.005em;
+  text-transform: uppercase;
+}
+
+h6 {
+  font-size: 0.875rem; /* ~14px */
+  letter-spacing: 0.005em;
+  text-transform: uppercase;
+}
