@@ -6,7 +6,7 @@ permalink: /contact/
 # Contact  
 
 <p  class="contact-note">
-If you are interested in my work and would like to collaborate, feel free to contact me at
+If you are interested in working with me, feel free to contact me at
 <a href="mailto:sergio@sergioalegre.com">sergio@sergioalegre.com</a> 
 or via
 <a href="https://wa.me/4917629879338" target="_blank" rel="noopener noreferrer">WhatsApp</a>.

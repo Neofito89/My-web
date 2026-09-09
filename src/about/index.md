@@ -9,7 +9,6 @@ What is about me? and about this portfolio? well, the two elements that very obv
 
 Chronologically, both things started in an early phase of my life. Violin at 8 and photography at 13. The discrepancy however is in the motivation. I did ask to play an instrument, but photography it was just an introduction course that, without asking, my 
 
-
 With all of that in mind, I move to Berlin in 2022, as the capital city in europe that is as peak in classical music as photography (or visual arts in generals).
 
 ---
@@ -18,7 +17,7 @@ With all of that in mind, I move to Berlin in 2022, as the capital city in europ
 
 The principles of my photography, or why I do what I do and how I do it.
 
-*First point* The connection. As Dorothea Lange said
+*First point* As Dorothea Lange said
 
 > Pick a theme and work it to exhaustion... the subject must be something you truly love or truly hate.
 
