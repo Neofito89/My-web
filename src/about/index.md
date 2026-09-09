@@ -7,7 +7,7 @@ permalink: /about/
 
 What is about me? and about this portfolio? well, the two elements that very obviously you can apreciate both in my life and in this site are photography and music. 
 
-Chronologically, both things started in an early phase of my life. Violin at 8 and photography at 13. The discrepancy however is in the motivation. I did ask to play an instrument, but photography it was just an introduction course that, without asking, my 
+Chronologically, both things started in an early phase of my life. Violin at 8 and photography at 13. The discrepancy however is in the motivation. I did ask to play an instrument, but photography it was just an introduction course that, without asking, my mother wrote me in. Still in the analog era, probably the last promotion. Some years later I got my first DSLR right before starting my viola Bachelor's degree in Lugano
 
 With all of that in mind, I move to Berlin in 2022, as the capital city in europe that is as peak in classical music as photography (or visual arts in generals).
 

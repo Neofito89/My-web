@@ -83,6 +83,8 @@ PhotoRelay does not collect or transmit:
 
 PhotoRelay also does not currently use its own analytics or crash-reporting service.
 
+PhotoRelay does not store users’ photos, RAW files, metadata, file names, or file paths on its own servers. These data are processed locally on the user’s device and remain under the user’s control. PhotoRelay does not maintain user accounts or a server-side database containing personal user data. Any locally stored PhotoRelay data can be removed by the user by deleting the app or its associated local app data. Data processed by third-party services such as Google AdMob and Google Play Billing are handled and retained by those providers according to their respective privacy policies and data retention practices.
+
 ## 7. Local Processing and Storage
 
 PhotoRelay performs its core photograph-processing functions directly on your Android device.

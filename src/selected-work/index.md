@@ -3,6 +3,5 @@ layout: base.njk
 permalink: /selected-work/
 ---
 
-# About me
 
-asdf asdf test unos 
+Gallery coming very soon, meanwhile you can check on instagram @sergioalegre.photo
