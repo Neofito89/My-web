@@ -1,3 +1,14 @@
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const menuToggle = document.querySelector('.menu-toggle');
+    const mainNav = document.querySelector('.main-nav');
+
+    menuToggle.addEventListener('click', () => {
+      mainNav.classList.toggle('is-open');
+    });
+  });
+</script>
+
 <header class="site-header">
   <div class="header-inner">
     <a href="/" class="logo">
@@ -11,7 +22,7 @@
       <span></span>
       <span></span>
     </button>
-    
+
   <nav class="main-nav">
     <ul>
     <li><a href="/">Portraits</a></li>

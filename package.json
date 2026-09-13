@@ -3,12 +3,12 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "start": "set ELEVENTY_USE_POLLING=true && npx @11ty/eleventy --serve --watch",
-    "build": "npx @11ty/eleventy",
-    "clean": "rmdir /s /q dist",
-    "rebuild": "npm run clean && npm run build",
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
+  "start": "concurrently \"npx @11ty/eleventy --serve --watch\" \"node watch-assets.js\"",
+  "build": "npx @11ty/eleventy",
+  "clean": "rmdir /s /q dist",
+  "rebuild": "npm run clean && npm run build",
+  "test": "echo \"Error: no test specified\" && exit 1"
+},
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Neofito89/My-web.git"
@@ -22,8 +22,10 @@
   "homepage": "https://github.com/Neofito89/My-web#readme",
   "description": "",
   "devDependencies": {
-    "@11ty/eleventy": "^3.1.0",
+    "@11ty/eleventy": "^3.1.6",
     "@11ty/eleventy-img": "^6.0.4",
+    "chokidar": "^3.6.0",
+    "concurrently": "^10.0.5",
     "nodemon": "^3.1.14",
     "sharp": "^0.34.3"
   },
