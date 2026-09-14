@@ -305,21 +305,37 @@ a {
 
 @media (max-width: 600px) {
   main {
-    margin: 1em;
-    padding: 0 0.5em;
+    margin: 0 1em;
+    margin-top: 40px; // hay que cambiarlo junto con height de site-header 
+    padding: 0;
+  }
+
+  .content {
+    padding: 0.8rem 0.8rem;   /* menos lateral que en escritorio (2rem 1.5rem) */
+  }
+
+  .site-header {
+    height: 40px;
+    padding: 0.3em 1em;
   }
 
   .menu-toggle {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  width: 32px;
-  height: 24px;
+  width: 26px;
+  height: 20px;
   padding: 0;
   border: 0;
   background: transparent;
   cursor: pointer;
 }
+
+.logo img {
+    height: 30px;
+    width: auto;
+    display: block;
+  }
 
 .menu-toggle span {
   display: block;
@@ -339,7 +355,7 @@ a {
   left: 0;
   right: 0;
   background: #fff;
-  padding: 1.5rem 1rem;
+  padding: 0.7rem 1rem; // aquí se ajusta el espacio del menú desplegable por arriba y por abajo 
 }
 
 .main-nav.is-open ul {
@@ -353,8 +369,22 @@ a {
   padding-left: 0;
 }
 
+.main-nav.is-open ul li:last-child {
+  padding-left: 0;      /* quita el espacio que dejaba sitio a la línea vertical de escritorio */
+  padding-top: 1.2rem;  /* separa el texto de la línea que añadimos abajo */
+  position: relative;
+}
+
 .main-nav.is-open ul li:last-child::before {
-  display: none;
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 2.5em;          /* ajusta este valor: más corta que "Contact" */
+  height: 1px;
+  background: #222;
+  opacity: 0.5;
 }
 
   .footer-content {
@@ -380,5 +410,4 @@ a {
     height: auto;
   }
 
-}
 }

@@ -2,7 +2,6 @@
 layout: base.njk
 permalink: /about/
 ---
-
 # ABOUT ME
 
 What is about me? and about this portfolio? well, the two elements that very obviously you can apreciate both in my life and in this site are photography and music. 

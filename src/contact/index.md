@@ -2,7 +2,6 @@
 layout: base.njk
 permalink: /contact/
 ---
-
 # Contact  
 
 <p  class="contact-note">
