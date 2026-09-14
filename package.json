@@ -3,12 +3,12 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-  "start": "concurrently \"npx @11ty/eleventy --serve --watch\" \"node watch-assets.js\"",
-  "build": "npx @11ty/eleventy",
-  "clean": "rmdir /s /q dist",
-  "rebuild": "npm run clean && npm run build",
-  "test": "echo \"Error: no test specified\" && exit 1"
-},
+    "start": "concurrently \"npx @11ty/eleventy --serve --watch\" \"node watch-assets.js\"",
+    "build": "npx @11ty/eleventy",
+    "clean": "rmdir /s /q dist",
+    "rebuild": "npm run clean && npm run build",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Neofito89/My-web.git"

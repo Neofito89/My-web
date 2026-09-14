@@ -1,24 +1,23 @@
 const chokidar = require("chokidar");
 const fs = require("fs");
-const path = require("path");
 
-const SRC = path.resolve("src/css");
-const DEST = path.resolve("dist/css");
+const source = "src/css/styles.css";
+const destination = "dist/css/styles.css";
 
-function syncCss() {
-  fs.cpSync(SRC, DEST, {
-    recursive: true,
-    force: true
-  });
+console.log("CSS WATCHER INICIADO");
 
-  console.log("✓ CSS sincronizado → dist/css");
+function copyCss() {
+  fs.copyFileSync(source, destination);
+  console.log(">>> CSS COPIADO FORZOSAMENTE");
 }
 
-syncCss();
+copyCss();
 
-chokidar.watch(SRC, {
-  ignoreInitial: true,
-  persistent: true
-}).on("all", () => {
-  syncCss();
+chokidar.watch(source, {
+  persistent: true,
+  usePolling: true,
+  interval: 500
+}).on("change", () => {
+  console.log(">>> CAMBIO EN STYLES.CSS");
+  copyCss();
 });

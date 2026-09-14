@@ -74,8 +74,6 @@ module.exports = function(eleventyConfig) {
     interval: 500
   });
 
-  eleventyConfig.addWatchTarget("./src/");
-  eleventyConfig.addWatchTarget("./src/**/*.md");
   eleventyConfig.setWatchThrottleWaitTime(100);
   eleventyConfig.setUseGitIgnore(false);
 
