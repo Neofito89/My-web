@@ -310,9 +310,13 @@ a {
   }
 
   .content {
-    padding: 0.8rem 1rem;   /* menos lateral que en escritorio (2rem 1.5rem) */
+    padding: 0.8rem 1rem;   /* menos lateral que en escritorio (2rem 1.5rem)  es el 2º numero para los laterales */
   }
 
+  .content > h1:first-child,
+  .content > h2:first-child {
+    margin-top: 0;
+  }
   .site-header {
     height: 40px;
     padding: 0.3em 1em;
