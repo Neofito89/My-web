@@ -305,13 +305,12 @@ a {
 
 @media (max-width: 600px) {
   main {
-    margin: 0 1em;
-    margin-top: 40px; // hay que cambiarlo junto con height de site-header 
+    margin-top: 40px; /* hay que cambiarlo junto con height de site-header */
     padding: 0;
   }
 
   .content {
-    padding: 0.8rem 0.8rem;   /* menos lateral que en escritorio (2rem 1.5rem) */
+    padding: 0.8rem 1rem;   /* menos lateral que en escritorio (2rem 1.5rem) */
   }
 
   .site-header {
@@ -355,7 +354,7 @@ a {
   left: 0;
   right: 0;
   background: #fff;
-  padding: 0.7rem 1rem; // aquí se ajusta el espacio del menú desplegable por arriba y por abajo 
+  padding: 0.7rem 1rem; /* aquí se ajusta el espacio del menú desplegable por arriba y por abajo */
 }
 
 .main-nav.is-open ul {
