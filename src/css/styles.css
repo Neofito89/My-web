@@ -10,7 +10,6 @@ html, body {
   margin: 0;
   padding: 0;
   height: 100%;
-  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-size: 16px;
   line-height: 1.5;
   color: #000;
@@ -20,6 +19,7 @@ html, body {
 
 body {
   min-height: 100vh;
+  min-height: 100dvh;  /* usa el viewport real visible, evita el hueco extra en móvil */
   display: flex;
   flex-direction: column;
   font-family: var(--font-body);
@@ -31,13 +31,19 @@ main {
   margin-top: 110px;
 }
 
+.content img,
+.content picture {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
 /* =========================
    2. TIPOGRAFÍA
 ========================= */
 
 :root {
   --font-display: "Poiret One", sans-serif;
-  --font-body: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --font-body: "Poiret One", Helvetica, Arial, sans-serif;
 }
 @font-face {
   font-family: "Poiret One";
