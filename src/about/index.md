@@ -1,6 +1,8 @@
 ---
 layout: base.njk
 permalink: /about/
+title: About
+description: Sergio Alegre is a violist and portrait photographer based in Berlin — the story and the ideas behind his photography.
 ---
 # ABOUT ME
 

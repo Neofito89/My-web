@@ -1,6 +1,8 @@
 ---
 layout: base.njk
 templateEngine: njk
+title: Privacy Policy
+description: Privacy policy for sergioalegre.com, including how analytics data is handled and how to opt out.
 ---
 
 

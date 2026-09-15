@@ -1,6 +1,8 @@
 ---
 layout: base.njk
 templateEngine: njk
+title: Impressum
+description: Legal notice (Impressum) for sergioalegre.com, in accordance with German law (§ 5 TMG).
 ---
 
 <h2>Impressum / Legal Notice</h2>

@@ -4,6 +4,9 @@
     <title>{{ title }} · Sergio Alegre Photography</title>
     <meta name="description" content="{{ description or 'Sergio Alegre — portrait and music photography based in Berlin.' }}" />
     <link rel="stylesheet" href="/css/styles.css?v={{ buildTime }}" />
+    <!-- photoswipe.css se inyecta por JS (ver src/js/gallery.js): solo hace
+         falta para el lightbox, no para pintar el grid, así que cargarlo
+         aquí de forma síncrona bloqueaba el render sin necesidad. -->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/png" href="/images/favicon-96x96.png" sizes="96x96" />
@@ -44,13 +47,15 @@
   <body>
 
     {% include "header.njk" %}
-   
+
     <main>
-      <div class="content">
+      <div class="gallery-wide">
     {{ content | safe }}
   </div>
     </main>
 
     {% include "footer.njk" %}
+
+    <script type="module" src="/js/gallery.js?v={{ buildTime }}" defer></script>
   </body>
 </html>

@@ -1,6 +1,8 @@
 ---
 layout: base.njk
 permalink: /selected-work/
+title: Selected Work
+description: A curated selection of Sergio Alegre's photography work, coming soon.
 ---
 
 

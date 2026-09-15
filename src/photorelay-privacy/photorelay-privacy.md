@@ -1,6 +1,8 @@
 ---
 layout: base.njk
 permalink: /photorelay-privacy/
+title: PhotoRelay Privacy Policy
+description: Privacy policy for the PhotoRelay Android app by Sergio Alegre.
 ---
 
 # PhotoRelay Privacy Policy

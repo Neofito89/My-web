@@ -1,0 +1,51 @@
+# =========================================================
+# Compresión y cabeceras de caché para sergioalegre.com
+# Generado para resolver los avisos de PageSpeed Insights:
+# "Use efficient cache lifetimes" y "Document request latency
+# (no compression applied)".
+# =========================================================
+
+# --- Compresión (gzip) ---
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/plain text/xml
+  AddOutputFilterByType DEFLATE text/css text/javascript
+  AddOutputFilterByType DEFLATE application/javascript application/x-javascript
+  AddOutputFilterByType DEFLATE application/json application/xml application/rss+xml
+  AddOutputFilterByType DEFLATE image/svg+xml
+  AddOutputFilterByType DEFLATE font/ttf font/otf application/vnd.ms-fontobject
+</IfModule>
+
+# --- Cache-Control por tipo de archivo ---
+# Fuentes e imágenes de galería: sus nombres de archivo ya incluyen un hash
+# de contenido (eleventy-img), así que son efectivamente inmutables — caché
+# larga y segura ("immutable": el navegador ni siquiera revalida).
+<IfModule mod_headers.c>
+  <FilesMatch "\.(woff2|woff|ttf|otf)$">
+    Header set Cache-Control "public, max-age=31536000, immutable"
+  </FilesMatch>
+  <FilesMatch "\.(avif|webp|jpe?g|png|ico)$">
+    Header set Cache-Control "public, max-age=31536000, immutable"
+  </FilesMatch>
+  <FilesMatch "\.svg$">
+    Header set Cache-Control "public, max-age=31536000, immutable"
+  </FilesMatch>
+
+  # CSS/JS propios (styles.css, gallery.js): NO tienen hash en el nombre,
+  # así que se sirven con ?v=<fecha-de-build> (ver base.njk/gallery.njk) para
+  # poder cachearlos igual de agresivo sin servir versiones desactualizadas
+  # tras un despliegue.
+  <FilesMatch "\.(css|js)$">
+    Header set Cache-Control "public, max-age=31536000, immutable"
+  </FilesMatch>
+
+  # HTML: siempre revalidar (el contenido cambia en cada build y no lleva
+  # versión en la URL).
+  <FilesMatch "\.html$">
+    Header set Cache-Control "no-cache"
+  </FilesMatch>
+</IfModule>
+
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresByType text/html "access plus 0 seconds"
+</IfModule>

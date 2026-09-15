@@ -470,3 +470,101 @@ a {
   }
 
 }
+
+/* =========================
+   9. GALERÍA (filas justificadas)
+========================= */
+
+/* Contenedor ancho para páginas de galería (layout gallery.njk), en vez de
+   la columna de texto de .content (580px). Full-bleed con techo en
+   pantallas muy grandes. */
+.gallery-wide {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 1.5rem 1em;
+}
+
+/* Los 3 bloques (mobile/tablet/desktop) se generan siempre los tres en el
+   build; solo se muestra el que corresponde al ancho real de la ventana.
+   Los navegadores no descargan las imágenes de los bloques con
+   display:none, así que esto no cuesta ancho de banda extra. */
+.gallery-rows {
+  display: none;
+}
+
+@media (max-width: 599px) {
+  .gallery-rows--mobile {
+    display: block;
+  }
+}
+
+@media (min-width: 600px) and (max-width: 999px) {
+  .gallery-rows--tablet {
+    display: block;
+  }
+}
+
+@media (min-width: 1000px) {
+  .gallery-rows--desktop {
+    display: block;
+  }
+}
+
+.gallery-row {
+  display: flex;
+  gap: 8px;
+}
+
+.gallery-row + .gallery-row {
+  margin-top: 8px;
+}
+
+/* Cada foto es un flex item con flex-grow = su propio aspect ratio y
+   flex-basis: 0. Flexbox reparte el ancho disponible de la fila en esa
+   proporción, lo que produce matemáticamente la misma altura final para
+   todas las fotos de la fila sin recortar ninguna (ver
+   claude/galeria-arquitectura.md para el razonamiento). */
+.gallery-item,
+.selected-work-item {
+  position: relative;
+  display: block;
+  flex-basis: 0;
+  min-width: 0;
+  overflow: hidden;
+  background-size: cover;
+  background-position: center;
+}
+
+.gallery-item picture,
+.gallery-item img,
+.selected-work-item picture,
+.selected-work-item img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* Placeholder blur-up: el fondo (miniatura borrosa en base64) se ve hasta
+   que la imagen nítida termina de cargar y hace fade-in. */
+.gallery-img {
+  opacity: 0;
+  transition: opacity 0.35s ease;
+}
+
+.gallery-img.is-loaded {
+  opacity: 1;
+}
+
+.selected-work-item {
+  transition: opacity 0.2s ease;
+}
+
+.selected-work-item:hover {
+  opacity: 0.85;
+}
+
+@media (max-width: 600px) {
+  .gallery-wide {
+    padding: 1rem 0.8rem;
+  }
+}

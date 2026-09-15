@@ -1,6 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 const Image = require("@11ty/eleventy-img");
+const registerGalleryShortcodes = require("./eleventy/gallery.js");
 
 const OUTPUT_DIR = "./dist/img/";
 const URL_PATH = "/img/";
@@ -79,10 +80,44 @@ module.exports = function(eleventyConfig) {
 
   // Assets
   eleventyConfig.addPassthroughCopy({ "src/css/fonts": "css/fonts" });
-  eleventyConfig.addPassthroughCopy("src/images");
+  // Hallazgo al implementar la galería: "npm run build" (a diferencia de
+  // "npm start") no ejecuta watch-assets.js, así que sin esta línea
+  // styles.css nunca llegaba a dist/ en un build de producción limpio
+  // (solo en dev, vía el watcher). Se añade aquí para que el build sea
+  // autosuficiente; no interfiere con watch-assets.js en desarrollo.
+  eleventyConfig.addPassthroughCopy({ "src/css/styles.css": "css/styles.css" });
+  // Nota: "src/images/galleries" queda fuera a propósito. Esas fotos las
+  // procesa el shortcode "gallery" (eleventy/gallery.js) vía eleventy-img,
+  // que ya genera y sirve las variantes optimizadas — copiarlas aquí
+  // también duplicaría los originales de alta resolución en dist/ sin
+  // necesidad.
+  eleventyConfig.addPassthroughCopy("src/images/*.{png,ico,svg,jpg,jpeg,webmanifest}");
+  eleventyConfig.addPassthroughCopy("src/images/social");
+  // .htaccess (compresión + cache-control): fuera de src/ porque no es una
+  // plantilla ni un asset de contenido, es config del servidor Apache.
+  eleventyConfig.addPassthroughCopy({ "config/.htaccess": ".htaccess" });
+
+  // JS de galería (script cliente, sin bundler) + vendor PhotoSwipe.
+  // Igual que con styles.css: "npm run build" no copiaba nada a dist/js/,
+  // así que en un build de producción limpio (a diferencia de "npm start")
+  // gallery.js y PhotoSwipe no llegaban a dist/. Resultado en remoto: la
+  // galería se quedaba en el placeholder blur y el click abría el JPEG
+  // suelto en vez de abrir el lightbox.
+  eleventyConfig.addPassthroughCopy({ "src/js": "js" });
+  eleventyConfig.addPassthroughCopy({
+    "node_modules/photoswipe/dist/photoswipe-lightbox.esm.min.js": "js/vendor/photoswipe/photoswipe-lightbox.esm.min.js",
+    "node_modules/photoswipe/dist/photoswipe.esm.min.js": "js/vendor/photoswipe/photoswipe.esm.min.js",
+    "node_modules/photoswipe/dist/photoswipe.css": "js/vendor/photoswipe/photoswipe.css"
+  });
 
   // Global
   eleventyConfig.addGlobalData("year", new Date().getFullYear());
+  // Cache-busting para styles.css y gallery.js: sus nombres de archivo no
+  // llevan hash de contenido (a diferencia de las imágenes generadas por
+  // eleventy-img), así que se les añade "?v=<build>" en la URL para poder
+  // darles Cache-Control de un año en .htaccess sin servir una versión
+  // vieja tras el siguiente despliegue.
+  eleventyConfig.addGlobalData("buildTime", Date.now());
 
   // Shortcodes
   eleventyConfig.addNunjucksAsyncShortcode("image", imageShortcode);
@@ -120,6 +155,9 @@ module.exports = function(eleventyConfig) {
     });
     return metadata.svg[0].buffer.toString();
   });
+
+  // Galerías: shortcodes {% gallery %} y {% selectedWorks %}
+  registerGalleryShortcodes(eleventyConfig);
 
   return {
     dir: {

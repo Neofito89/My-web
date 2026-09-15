@@ -1,6 +1,8 @@
 ---
 layout: base.njk
 permalink: /contact/
+title: Contact
+description: Get in touch with Sergio Alegre for portrait photography projects in Berlin — by email, WhatsApp or phone.
 ---
 # Contact  
 
