@@ -23,6 +23,7 @@ body {
   display: flex;
   flex-direction: column;
   font-family: var(--font-body);
+  font-weight: var(--font-body-weight);
 }
 
 main {
@@ -43,13 +44,62 @@ main {
 
 :root {
   --font-display: "Poiret One", sans-serif;
-  --font-body: "Poiret One", Helvetica, Arial, sans-serif;
+  --font-body: "Josefin Sans", Helvetica, Arial, sans-serif;
+  --font-body-weight: 300;
 }
 @font-face {
   font-family: "Poiret One";
   src: url("/css/fonts/PoiretOne/PoiretOne-Regular.woff2") format("woff2"),
        url("/css/fonts/PoiretOne/PoiretOne-Regular.ttf") format("truetype");
   font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Josefin Sans";
+  src: url("/css/fonts/JosefinSans/JosefinSans-Regular.woff2") format("woff2"),
+       url("/css/fonts/JosefinSans/JosefinSans-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Josefin Sans";
+  src: url("/css/fonts/JosefinSans/JosefinSans-Light.woff2") format("woff2"),
+       url("/css/fonts/JosefinSans/JosefinSans-Light.ttf") format("truetype");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Jost";
+  src: url("/css/fonts/Jost/Jost-Regular.woff2") format("woff2"),
+       url("/css/fonts/Jost/Jost-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Jost";
+  src: url("/css/fonts/Jost/Jost-Light.woff2") format("woff2"),
+       url("/css/fonts/Jost/Jost-Light.ttf") format("truetype");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Work Sans";
+  src: url("/css/fonts/WorkSans/WorkSans-Regular.woff2") format("woff2"),
+       url("/css/fonts/WorkSans/WorkSans-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Work Sans";
+  src: url("/css/fonts/WorkSans/WorkSans-Light.woff2") format("woff2"),
+       url("/css/fonts/WorkSans/WorkSans-Light.ttf") format("truetype");
+  font-weight: 300;
   font-style: normal;
   font-display: swap;
 }
@@ -349,7 +399,7 @@ a {
 .menu-toggle span {
   display: block;
   width: 100%;
-  height: 2px;
+  height: 1px;
   background: #000;
 }
 

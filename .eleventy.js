@@ -78,7 +78,7 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.setUseGitIgnore(false);
 
   // Assets
-  eleventyConfig.addPassthroughCopy({ "src/css/fonts": "fonts" });
+  eleventyConfig.addPassthroughCopy({ "src/css/fonts": "css/fonts" });
   eleventyConfig.addPassthroughCopy("src/images");
 
   // Global
