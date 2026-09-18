@@ -7,6 +7,21 @@ const OUTPUT_DIR = "./dist/img/";
 const URL_PATH = "/img/";
 
 // --- Helpers ---
+// Los nombres de archivo de origen no siempre son "url-safe" (acentos,
+// "©", espacios...) — por ejemplo una foto de cabecera con crédito de
+// autor en el propio nombre de archivo. Se sanea solo el nombre de las
+// variantes generadas (URLs en dist/), nunca el archivo de origen en
+// src/, para evitar problemas de codificación en el navegador/servidor.
+function slugifyBasename(src) {
+  const base = path.basename(src, path.extname(src));
+  return base
+    .normalize("NFKD")
+    .replace(/[̀-ͯ]/g, "") // quita acentos (á -> a)
+    .replace(/[^a-zA-Z0-9._-]+/g, "-") // "©", espacios, etc. -> "-"
+    .replace(/-+/g, "-")
+    .replace(/^-|-$/g, "");
+}
+
 async function processImage(src, widths) {
   return Image(src, {
     widths,
@@ -14,7 +29,7 @@ async function processImage(src, widths) {
     outputDir: OUTPUT_DIR,
     urlPath: URL_PATH,
     filenameFormat: (id, src, width, format) => {
-      const name = path.basename(src, path.extname(src));
+      const name = slugifyBasename(src);
       return `${name}-${width}.${format}`;
     },
     sharpOptions: {

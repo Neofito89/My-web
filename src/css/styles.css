@@ -565,6 +565,17 @@ a {
 
 @media (max-width: 600px) {
   .gallery-wide {
-    padding: 1rem 0.8rem;
+    padding: 0.8rem 0.8rem 1rem;
+  }
+
+  /* Igualar en móvil la distancia del primer elemento (normalmente el
+     título) al header con las páginas basadas en base.njk (ver la regla
+     equivalente para .content en la sección 8, RESPONSIVE). Sin este
+     reset, el margin-top por defecto del h1/h2 se suma al padding-top de
+     arriba y separa el título del header mucho más que en el resto de
+     páginas. En escritorio no se toca nada. */
+  .gallery-wide > h1:first-child,
+  .gallery-wide > h2:first-child {
+    margin-top: 0;
   }
 }

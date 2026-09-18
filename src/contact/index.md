@@ -12,14 +12,12 @@ If you are interested in working with me, feel free to contact me at
 or via
 <a href="https://wa.me/4917629879338" target="_blank" rel="noopener noreferrer">WhatsApp</a>.
 </p>
-<p class="contact-note">
-Alternatively, you can reach me by phone at <a href="tel:+4917629879338">+49 176 29879338</a>.
-</p>
-<p  class="contact-note">
-You can also follow my latest work on 
-<a href="https://instagram.com/sergioalegre.photo" target="_blank" rel="noopener noreferrer">Instagram</a>.
-</p>
 
 <p class="contact-note">
 When reaching out, it helps to include a brief idea of your project, timeline and budget. I look forward to hearing from you.
+</p>
+
+<p  class="contact-note">
+You can also follow my latest work on 
+<a href="https://instagram.com/sergioalegre.photo" target="_blank" rel="noopener noreferrer">Instagram</a>.
 </p>
